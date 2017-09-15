@@ -1,7 +1,7 @@
 # Ranges
 
 ranges is a library to iterate over some ranges that I found useful while coding.
-I've been inspired by @bradfitz with its [iter](https://github.com/bradfitz/iter) library, even though it is a joke in the first place.
+I've been inspired by @bradfitz with his [iter](https://github.com/bradfitz/iter) library, even though it is a joke in the first place.
 
 ## Period
 
