@@ -1,11 +1,30 @@
 package ranges_test
 
 import (
+	"fmt"
 	"testing"
 	"time"
 
 	"github.com/dolanor/ranges"
 )
+
+func ExamplePeriod() {
+	start := time.Date(2017, time.Month(8), 1, 0, 0, 0, 0, time.UTC)
+	end := time.Date(2017, time.Month(8), 1, 1, 0, 0, 0, time.UTC)
+	period := time.Duration(10 * time.Minute)
+
+	for _, p := range ranges.Period(start, end, period) {
+		fmt.Println(p.Format(time.RFC3339))
+	}
+
+	// Output:
+	// 2017-08-01T00:00:00Z
+	// 2017-08-01T00:10:00Z
+	// 2017-08-01T00:20:00Z
+	// 2017-08-01T00:30:00Z
+	// 2017-08-01T00:40:00Z
+	// 2017-08-01T00:50:00Z
+}
 
 func TestPeriod(t *testing.T) {
 	start := time.Date(2017, time.Month(8), 1, 0, 0, 0, 0, time.UTC)
